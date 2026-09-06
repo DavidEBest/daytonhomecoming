@@ -46,10 +46,17 @@ Spam protection: FormSubmit shows a reCAPTCHA page by default, and each form has
 
 1. Create a GitHub repo and push this directory.
 2. In the repo settings, enable GitHub Pages from the `main` branch root.
-3. `CNAME` already contains `daytonhomecoming.com`. Point the domain's DNS at GitHub Pages
-   (A records to GitHub's Pages IPs, plus a `www` CNAME to `<user>.github.io`) and turn on
-   "Enforce HTTPS" once the certificate is issued.
-4. Cancel the Wix plan after DNS has propagated and the forms have been tested.
+3. Preview URL while the domain still points at Wix: https://davidebest.github.io/daytonhomecoming/
+4. To go live on the real domain, add the CNAME file back and push:
+
+   ```sh
+   echo "daytonhomecoming.com" > CNAME && git add CNAME && git commit -m "Set custom domain" && git push
+   ```
+
+   Then point the domain's DNS at GitHub Pages (A records to GitHub's Pages IPs, plus a
+   `www` CNAME to `davidebest.github.io`) and turn on "Enforce HTTPS" once the certificate
+   is issued.
+5. Cancel the Wix plan after DNS has propagated and the forms have been tested.
 
 ## Media
 
