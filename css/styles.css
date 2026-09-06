@@ -1,0 +1,312 @@
+/* Dayton Homecoming Website Styles */
+
+:root {
+  --black: #000000;
+  --text: #1a1a1a;
+  --gray: #666666;
+  --gray-light: #efefef;
+  --line: #bababa;
+  --blue: #116dff;
+  --green: #4caf50;
+  --white: #ffffff;
+  --display: 'Wix Madefor Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --body: 'Wix Madefor Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--white);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+video { max-width: 100%; }
+/* Prevent replaced elements from forcing grid columns wider than the viewport */
+.two-col > *, .story-grid > *, .collab > *, .contact-grid > *, .evangelist-block > *,
+.cards > *, .resource-grid > *, .partner-grid > *, form .row > * { min-width: 0; }
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+h1 { font-size: 2.4rem; text-transform: uppercase; }
+h2 { font-size: 1.8rem; text-transform: uppercase; }
+h3 { font-size: 1.25rem; }
+p { margin-bottom: 1rem; }
+ul, ol { margin: 0 0 1rem 1.4rem; }
+li { margin-bottom: 0.35rem; }
+strong { font-weight: 700; }
+a { color: var(--black); text-decoration: underline; }
+a:hover { color: var(--blue); }
+
+/* Layout */
+.container { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+section { padding: 3.5rem 0; }
+.section-gray { background: var(--gray-light); }
+.narrow { max-width: 860px; }
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.text-center { text-align: center; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-family: var(--body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 999px;
+  padding: 0.6rem 1.6rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: var(--black); color: var(--white); }
+.btn-block { display: block; width: 100%; text-align: center; }
+
+/* Header & Navigation */
+header {
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+}
+header .container {
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--black);
+  font-family: var(--body);
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+.logo img { height: 24px; width: auto; }
+nav ul { display: flex; list-style: none; gap: 1.1rem; margin: 0; }
+nav li { margin: 0; }
+nav a {
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+nav a:hover, nav a.active { border-bottom-color: var(--black); color: var(--black); }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Page banner (subpages) */
+.banner {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+
+/* Home: intro */
+.home-intro { padding: 4rem 0; }
+.home-intro .logo-large { max-width: 560px; margin: 0 auto; }
+.home-intro .mission {
+  font-size: 1.25rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Home: evangelist */
+.evangelist-block { display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: center; }
+.evangelist-block img.photo { width: 100%; height: 520px; object-fit: cover; }
+.evangelist-block .definition { width: 100%; max-width: 720px; margin: 1rem 0 2rem; }
+
+/* Home: story */
+.story-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: start; }
+.video-frame { background: var(--black); }
+.video-frame video { width: 100%; height: auto; display: block; }
+.quotes p { margin-bottom: 1rem; }
+.quotes .who { font-weight: 700; }
+.story-cta { margin-top: 2.5rem; font-weight: 700; text-transform: uppercase; text-align: center; }
+
+/* Partners */
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 3rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+.partner-grid a { display: flex; align-items: center; justify-content: center; height: 110px; padding: 0.5rem; }
+.partner-grid img { max-height: 100%; width: auto; max-width: 100%; object-fit: contain; }
+
+/* Collaboratory */
+.collab { display: grid; grid-template-columns: 320px 1fr; gap: 3rem; align-items: center; }
+
+/* About cards */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.card { padding: 2rem 1.75rem; color: var(--white); min-height: 100%; }
+.card h3 { color: var(--white); text-transform: uppercase; font-size: 1.1rem; margin-bottom: 1rem; }
+.card ul { margin-left: 1.1rem; font-size: 0.95rem; }
+.card-blue { background: var(--blue); }
+.card-green { background: var(--green); }
+
+/* Resource grids */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.resource-grid.two { grid-template-columns: repeat(2, 1fr); max-width: 640px; margin-left: auto; margin-right: auto; }
+.resource { display: flex; flex-direction: column; align-items: center; }
+.resource .logo-box { height: 120px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; }
+.resource .logo-box img { max-height: 110px; max-width: 220px; width: auto; object-fit: contain; }
+.resource a.title { font-weight: 700; font-size: 1.05rem; }
+.resource p { font-size: 0.95rem; margin: 0.35rem 0 0; }
+
+/* Steps list */
+.steps { counter-reset: step; list-style: none; margin-left: 0; }
+.steps li { position: relative; padding-left: 2.6rem; margin-bottom: 1rem; }
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute; left: 0; top: 0.1rem;
+  width: 1.8rem; height: 1.8rem;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Testimonial video */
+.testimonial { max-width: 900px; margin: 2rem auto 0; text-align: center; }
+.testimonial video { width: 100%; height: auto; display: block; background: var(--black); }
+.testimonial h3 { margin-top: 1.25rem; margin-bottom: 0.1rem; font-size: 1.4rem; }
+.testimonial .role { font-style: italic; font-weight: 700; }
+
+/* Forms (Wix-style underline inputs) */
+.form-section { max-width: 980px; margin: 0 auto; }
+form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label, .form-group .group-label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+.form-group .help { font-size: 0.85rem; color: var(--gray); margin-bottom: 0.5rem; }
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  width: 100%;
+  font-family: var(--body);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 0.5rem 0;
+  border-radius: 0;
+  outline: none;
+}
+input:focus, select:focus, textarea:focus { border-bottom-color: var(--black); }
+textarea { min-height: 90px; resize: vertical; }
+select { cursor: pointer; }
+.choice { display: flex; align-items: flex-start; gap: 0.6rem; margin: 0.45rem 0; font-size: 0.9rem; }
+.choice input { margin-top: 0.3rem; flex-shrink: 0; }
+.required::after { content: " *"; }
+
+/* Contact layout */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.contact-grid h1.big { font-size: 3rem; }
+
+/* Footer */
+footer { padding: 3rem 0 2rem; border-top: 1px solid #eee; font-size: 0.85rem; }
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.footer-top .tagline { font-weight: 700; text-transform: uppercase; }
+.social { display: flex; gap: 0.6rem; }
+.social a {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+}
+.social a:hover { background: var(--blue); }
+.social svg { width: 18px; height: 18px; fill: currentColor; }
+.footer-info { text-align: center; }
+.footer-info p { margin-bottom: 1rem; }
+.footer-info .label { display: block; }
+.footer-bottom { text-align: center; color: var(--gray); margin-top: 1rem; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  h1 { font-size: 1.9rem; }
+  .two-col, .story-grid, .collab, .contact-grid, .evangelist-block { grid-template-columns: 1fr; }
+  .evangelist-block img.photo { height: 320px; }
+  .partner-grid { grid-template-columns: repeat(3, 1fr); }
+  .cards { grid-template-columns: 1fr; }
+  .resource-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1200px) {
+  .menu-toggle { display: block; }
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--white);
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 0;
+  }
+  nav ul.active { display: flex; }
+  nav li { padding: 0.75rem 1.5rem; margin: 0; }
+  nav a { font-size: 0.8rem; }
+}
+
+@media (max-width: 640px) {
+  .partner-grid { grid-template-columns: repeat(2, 1fr); }
+  .resource-grid, .resource-grid.two { grid-template-columns: 1fr; }
+  form .row { grid-template-columns: 1fr; gap: 0; }
+  .footer-top { flex-direction: column; text-align: center; }
+  .contact-grid h1.big { font-size: 2.2rem; }
+}
